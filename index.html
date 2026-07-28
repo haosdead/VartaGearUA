@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Varta Gear | Офіційні посилання</title>
+    
+    <!-- Підключення шрифтів та іконок -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            /* Темний тактичний дизайн з неоново-зеленими акцентами */
+            --accent-color: #4CAF50;
+            --accent-glow: rgba(76, 175, 80, 0.5);
+            --text-main: #ffffff;
+            --text-muted: #a0aab2;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Анімований фон */
+            background: linear-gradient(-45deg, #0d1117, #161b22, #0d1117, #1f2937);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /* Аватарка з пульсуючим світінням */
+        .avatar-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--glass-border);
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar-glow {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 50%;
+            background: var(--accent-color);
+            filter: blur(20px);
+            opacity: 0.3;
+            animation: pulse 3s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.2; }
+            100% { transform: scale(1.1); opacity: 0.4; }
+        }
+
+        h1 {
+            font-size: 26px;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        p.bio {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin: 0 0 35px 0;
+            line-height: 1.5;
+        }
+
+        /* Стилі для кнопок (Ефект скла) */
+        .links-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: -5px;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Іконки всередині кнопок */
+        .link-btn i {
+            font-size: 22px;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .link-btn span {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        /* Ефекти при наведенні */
+        .link-btn:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-glow);
+        }
+
+        /* Акцентна кнопка для сайту */
+        .link-btn.primary {
+            background: rgba(76, 175, 80, 0.15);
+            border-color: rgba(76, 175, 80, 0.4);
+        }
+
+        /* Специфічні кольори іконок при наведенні */
+        .link-btn:hover .fa-instagram { color: #E1306C; }
+        .link-btn:hover .fa-telegram { color: #0088cc; }
+        .link-btn:hover .fa-tiktok { color: #00f2fe; }
+        .link-btn:hover .fa-whatsapp { color: #25D366; }
+        .link-btn:hover .fa-globe { color: var(--accent-color); }
+        .link-btn:hover .fa-threads { color: #ffffff; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="avatar-container">
+            <div class="avatar-glow"></div>
+            <!-- Сюди завантажте ваш логотип, назвіть його avatar.jpg -->
+            <img src="avatar.jpg" alt="Varta Gear" class="avatar">
+        </div>
+        
+        <h1>VARTA GEAR</h1>
+        <p class="bio">Тактичний одяг та сучасне екіпірування.<br>Обирай найкраще.</p>
+
+        <!-- ОСНОВНІ ПОСИЛАННЯ -->
+        <div class="links-group">
+            <a href="https://vartagear.com.ua" class="link-btn primary" target="_blank">
+                <i class="fa-solid fa-globe"></i>
+                <span>Офіційний сайт</span>
+            </a>
+            
+            <a href="https://www.instagram.com/vartagear.ua?igsh=MTF0dWM3YjdqY2k2Yg==" class="link-btn" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+
+            <a href="https://www.tiktok.com/@vartagearua?_r=1&_t=ZS-98PCkHOfpB2" class="link-btn" target="_blank">
+                <i class="fa-brands fa-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+
+            <a href="https://t.me/vartagearuacom" class="link-btn" target="_blank">
+                <i class="fa-brands fa-telegram"></i>
+                <span>Telegram Канал</span>
+            </a>
+
+            <a href="https://www.threads.com/@vartagear.ua" class="link-btn" target="_blank">
+                <i class="fa-brands fa-threads"></i>
+                <span>Threads</span>
+            </a>
+        </div>
+
+        <!-- БЛОК ЗВ'ЯЗКУ -->
+        <div class="section-title">Зв'язок з нами</div>
+        <div class="links-group" style="margin-top: 15px;">
+            <a href="https://t.me/vartagear" class="link-btn" target="_blank">
+                <i class="fa-brands fa-telegram"></i>
+                <span>Написати в Telegram</span>
+            </a>
+
+            <a href="https://wa.me/+380933923810" class="link-btn" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Написати у WhatsApp</span>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
