@@ -50,7 +50,7 @@
             z-index: 1;
         }
 
-        /* Аватарка з пульсуючим світінням */
+        /* Аватарка з покращеним об'ємом і світінням */
         .avatar-container {
             position: relative;
             width: 130px;
@@ -63,7 +63,9 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--glass-border);
+            /* Зроблено красивіший, більш "тактичний" подвійний контур */
+            border: 3px solid rgba(76, 175, 80, 0.8);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.8), 0 0 20px rgba(76, 175, 80, 0.4);
             position: relative;
             z-index: 2;
         }
@@ -73,14 +75,14 @@
             top: 0; left: 0; right: 0; bottom: 0;
             border-radius: 50%;
             background: var(--accent-color);
-            filter: blur(20px);
-            opacity: 0.3;
+            filter: blur(25px);
+            opacity: 0.4;
             animation: pulse 3s infinite alternate;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.2; }
-            100% { transform: scale(1.1); opacity: 0.4; }
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.15); opacity: 0.6; }
         }
 
         h1 {
@@ -97,7 +99,7 @@
             line-height: 1.5;
         }
 
-        /* Стилі для кнопок (Ефект скла) */
+        /* Стилі для кнопок */
         .links-group {
             display: flex;
             flex-direction: column;
@@ -133,7 +135,6 @@
             overflow: hidden;
         }
 
-        /* Іконки всередині кнопок */
         .link-btn i {
             font-size: 22px;
             margin-right: 15px;
@@ -141,9 +142,29 @@
             text-align: center;
         }
 
-        .link-btn span {
+        .link-text {
             flex-grow: 1;
             text-align: left;
+        }
+
+        /* КРАСИВІ ПЛАШКИ (БЕДЖІ) ДЛЯ ЗНИЖОК */
+        .badge {
+            background: linear-gradient(45deg, #FF3D00, #FF9100);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
+            box-shadow: 0 3px 8px rgba(255, 61, 0, 0.4);
+            animation: badge-pulse 2s infinite;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        @keyframes badge-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         /* Ефекти при наведенні */
@@ -154,13 +175,12 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-glow);
         }
 
-        /* Акцентна кнопка для сайту */
         .link-btn.primary {
             background: rgba(76, 175, 80, 0.15);
             border-color: rgba(76, 175, 80, 0.4);
         }
 
-        /* Специфічні кольори іконок при наведенні */
+        /* Кольори іконок при наведенні */
         .link-btn:hover .fa-instagram { color: #E1306C; }
         .link-btn:hover .fa-telegram { color: #0088cc; }
         .link-btn:hover .fa-tiktok { color: #00f2fe; }
@@ -176,7 +196,7 @@
         
         <div class="avatar-container">
             <div class="avatar-glow"></div>
-            <!-- Сюди завантажте ваш логотип, назвіть його avatar.jpg -->
+            <!-- Назва файлу змінена на favicon.png -->
             <img src="favicon.png" alt="Varta Gear" class="avatar">
         </div>
         
@@ -187,27 +207,31 @@
         <div class="links-group">
             <a href="https://vartagear.com.ua" class="link-btn primary" target="_blank">
                 <i class="fa-solid fa-globe"></i>
-                <span>Офіційний сайт</span>
+                <span class="link-text">Офіційний сайт</span>
             </a>
             
             <a href="https://www.instagram.com/vartagear.ua?igsh=MTF0dWM3YjdqY2k2Yg==" class="link-btn" target="_blank">
                 <i class="fa-brands fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-
-            <a href="https://www.tiktok.com/@vartagearua?_r=1&_t=ZS-98PCkHOfpB2" class="link-btn" target="_blank">
-                <i class="fa-brands fa-tiktok"></i>
-                <span>TikTok</span>
+                <span class="link-text">Instagram</span>
+                <!-- Бедж знижки для Instagram -->
+                <span class="badge">-100 грн</span>
             </a>
 
             <a href="https://t.me/vartagearuacom" class="link-btn" target="_blank">
                 <i class="fa-brands fa-telegram"></i>
-                <span>Telegram Канал</span>
+                <span class="link-text">Telegram Канал</span>
+                <!-- Бедж знижки для Telegram -->
+                <span class="badge">-10%</span>
+            </a>
+
+            <a href="https://www.tiktok.com/@vartagearua?_r=1&_t=ZS-98PCkHOfpB2" class="link-btn" target="_blank">
+                <i class="fa-brands fa-tiktok"></i>
+                <span class="link-text">TikTok</span>
             </a>
 
             <a href="https://www.threads.com/@vartagear.ua" class="link-btn" target="_blank">
                 <i class="fa-brands fa-threads"></i>
-                <span>Threads</span>
+                <span class="link-text">Threads</span>
             </a>
         </div>
 
@@ -216,12 +240,12 @@
         <div class="links-group" style="margin-top: 15px;">
             <a href="https://t.me/vartagear" class="link-btn" target="_blank">
                 <i class="fa-brands fa-telegram"></i>
-                <span>Написати в Telegram</span>
+                <span class="link-text">Написати в Telegram</span>
             </a>
 
             <a href="https://wa.me/+380933923810" class="link-btn" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i>
-                <span>Написати у WhatsApp</span>
+                <span class="link-text">Написати у WhatsApp</span>
             </a>
         </div>
 
